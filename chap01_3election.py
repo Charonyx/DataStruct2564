@@ -1,26 +1,23 @@
 print('*** Election ***')
-num     = int(input('Enter a number of voter(s) : '))
-voter  = []
-if num >= 0 and num <= 20:  
-    # for i in range(num):
-    #     x = int(input())
-    #     voter.append(x)
-    voter = list(map(int,input().split()))
-    # print(max(set(voter), key = voter.count)) if 1 <= max(set(voter), key = voter.count) <= 20 else print("*** No Candidate Wins ***")
-    # for i not in range()
+num             = int(input('Enter a number of voter(s) : '))
+voter           = []
+voter2          = []
+if num > 0:
+    voter       = list(map(int,input().split()))
+    for i in voter: 
+        if 1 <= i <= 20 : voter2.append(i)
+    voter.clear()
+    voter = voter2.copy()
+    
+    # print(len(voter2))
 
-    if 1 <= max(set(voter), key = voter.count) <= 20 :
-
-        print(max(set(voter), key = voter.count))
-    else : 
-        print("*** No Candidate Wins ***")
-
-def most_common (lst):
-    return max(((item, lst.count(item)) for item in set(lst)), key=lambda a: a[1])[0]
-
-# print(most_common(voter))
-print('=======')
-print(voter)
-print(voter.__str__())
-print(max(list(voter), key = voter.index))
-print(list(voter), key = voter.count)
+    if voter2 == [] : print("*** No Candidate Wins ***")
+    else :
+        if len(voter2) == 1:
+            print(max(set(voter2), key = voter2.count))
+        elif len(voter2) > 1:
+            voter2.remove(max(set(voter2), key = voter2.count))
+            if voter.count(max(set(voter), key = voter.count)) == voter2.count(max(set(voter2), key = voter2.count)) : 
+                print("*** No Candidate Wins ***")
+            else : 
+                print(max(set(voter), key = voter.count))

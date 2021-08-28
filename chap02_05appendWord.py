@@ -1,54 +1,45 @@
 # Title           : Chapter : 2 - item : 5 - ต่อคำหรรษา
 
 class Torkham :
-    torkhamList = []
     def __init__(self, word) : 
         self.word = word
-        print('torkham')
-        print(self.word)
+        self.torkhamList = []
         self.wordGame()
 
-    def wordSubstring(self) :
-        return self.word.split()
-
-    def wordAppend(self) :
-        # print(self.word[-2 : -1])
-        # print(self.torkhamList[-1][-2:-1])
-        if 1 : # self.word[-2 : -1] == self.torkhamList[-1][-2:-1] : 
-            self.torkhamList.append()
+    def wordAppend(self, w) :
+        if self.torkhamList == [] or (str(w).lower())[:2] == (''.join(map(str, self.torkhamList))).lower()[-2:] : 
+            self.torkhamList.append(w)
+            print(f'\'{w}\' -> {self.torkhamList}')
         else :
-            print('game over')
+            print(f'\'{w}\' -> game over')
 
     def wordRestart(self) :
         self.torkhamList.clear()
         print('game restarted')
 
     def wordExit(self) :
-        print('end')
+        exit()
 
     def wordGame(self) :
-        for i in self.word :
-            if len(self.word) > 1 :
-                for j in range(len(i)) :
-                    if j[0] == 'P' : self.wordAppend(j[1]) 
-                    elif j[0] == 'R' : self.wordRestart()
-                    elif j[0] == 'X' : self.wordExit()
-                    else : pass
-            else :
-                if j == 'P' : self.wordAppend(j[1]) 
-                elif j == 'R' : self.wordRestart()
-                elif j == 'X' : self.wordExit()
-                else : pass
+        for i in range(len(self.word)) :
+            word[i]
+            if word[i] == 'P'      : 
+                # print(f'\t\t {i} : {word[i + 1]}')
+                self.wordAppend(word[i + 1]) 
+            elif word[i] == 'R'    : self.wordRestart()
+            elif word[i] == 'X'    : self.wordExit()
+            elif word[i - 1] == 'P' : continue
+            else : 
+                print(f'\'{word[i]} {word[i + 1]}\' is Invalid Input !!!')
+                break
 
 if __name__ == '__main__' :
     print('*** TorKham HanSaa ***')
-    txt = input('Enter Input : ').split(',')
-    print(txt)
-    word = [] 
-    for i in txt :
-        word.append(i.split())
-    # print(word)
-    # Torkham(txt)
-
-    
+    word    = input('Enter Input : ').split(',')
+    word2   = [] 
+    for i in word : word2.append(i.split())
+    word.clear()
+    for i in word2 :
+        for j in i : word.append(j)
+    Torkham(word)
     

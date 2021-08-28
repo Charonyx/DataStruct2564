@@ -1,0 +1,69 @@
+Chapter : 2 - item : 5 - ต่อคำหรรษา
+ ส่งมาแล้ว 0 ครั้ง
+ให้นักศึกษาเขียนโปรแกรมภาษา Python ในการใช้ Class สำหรับ “เกมต่อคำ” โดยจะมีกติกาดังต่อไปนี้
+
+ 
+1. คำล่าสุดจะต้องไม่ซ้ำกับคำที่เคยพูดไปแล้ว เช่นถ้าหากมีคนพูดว่า “Apple” ไปก่อนหน้านั้นแล้ว
+จะไม่สามารถพูดว่า “Apple” ได้อีก
+
+
+2. โดยการดูว่า 2 คำนั้นจะ Match กันหรือไม่ ให้ดู 2 ตัวอักษรสุดท้ายของข้อความสุดท้ายใน List กับ 2
+ตัวอักษรแรก ของคำล่าสุด เช่น [“Apple”, “lemon”] ถ้าหากคำที่จะเข้ามาเป็น “Onion” จะถือว่า Match
+แต่ถ้าหากคำที่เข้ามาเป็น “nectarine” จะถือว่าไม่ Match และเกมจะจบลงทันที
+
+
+3. Ignore Case Sensitive
+
+
+โดยจะมีรูปแบบคำสั่งดังต่อไปนี้
+- P < word > จะเป็นการต่อคำ
+- R จะเป็นการเริ่มคำใหม่ทั้งหมด
+- X เป็นการระบุว่าจบการทำงาน
+
+
+โดยจะรับประกันว่า word ที่รับมา จะมีความยาวอย่างน้อยที่สุดคือ
+
+
+
+1. -----------------------------------------------------
+*** TorKham HanSaa ***
+Enter Input : P Apple,P LEMON,R,P onion,X
+'Apple' -> ['Apple']
+'LEMON' -> ['Apple', 'LEMON']
+game restarted
+'onion' -> ['onion']
+
+2. -----------------------------------------------------
+*** TorKham HanSaa ***
+Enter Input : P apple,p lemon,P onion,X
+'apple' -> ['apple']
+'p lemon' is Invalid Input !!!
+
+3. -----------------------------------------------------
+*** TorKham HanSaa ***
+Enter Input : P apPLE,P leMON,R,P Durian,P ant,P pineapple,X
+'apPLE' -> ['apPLE']
+'leMON' -> ['apPLE', 'leMON']
+game restarted
+'Durian' -> ['Durian']
+'ant' -> ['Durian', 'ant']
+'pineapple' -> game over
+
+4. -----------------------------------------------------
+*** TorKham HanSaa ***
+Enter Input : R,R,P KK,R,P apple,R,P Lemon,R,X
+game restarted
+game restarted
+'KK' -> ['KK']
+game restarted
+'apple' -> ['apple']
+game restarted
+'Lemon' -> ['Lemon']
+game restarted
+
+5. -----------------------------------------------------
+*** TorKham HanSaa ***
+Enter Input : P apple,P lemon,P nectarine,X
+'apple' -> ['apple']
+'lemon' -> ['apple', 'lemon']
+'nectarine' -> game over

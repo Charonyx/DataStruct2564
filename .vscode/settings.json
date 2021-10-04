@@ -1,0 +1,9 @@
+{
+    "typescript.tsdk": "",
+    "python.autoComplete.extraPaths": [
+        "C:\\Users\\chura\\Source\\repos\\datastruct2564"
+    ],
+    "python.analysis.extraPaths": [
+        "C:\\Users\\chura\\Source\\repos\\datastruct2564"
+    ]
+}

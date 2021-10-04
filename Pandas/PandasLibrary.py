@@ -30,8 +30,9 @@ df2   = pd.DataFrame(data, index = ["data1", "data2", "data3"])
 
 # print(df.loc[[1, 2]], end='\n------------------\n')
 
-df.to_csv("test2.csv")
-df = pd.read_csv('test2.csv')
+df.to_csv("Pandas/pandas.csv")          #! export to Pandas folder
+# df.to_csv("t.csv")                    #! export to main folder 
+print(pd.read_csv('Pandas/pandas.csv'))
 
 
 # REF : https://www.w3schools.com/python/pandas/pandas_dataframes.asp

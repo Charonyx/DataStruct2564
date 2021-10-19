@@ -1,4 +1,4 @@
-# Title           : Chapter : 6 - item : 5 - วาดภาพแสนสุข
+# Title           : PETTREN
 def staircase(n):
     if n == 0   : return 'Not Draw!'
     elif n > 0  : stairPos(n, 1)

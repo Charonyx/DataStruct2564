@@ -24,7 +24,7 @@
     Siblings: พี่น้อง, in any tree the nodes which has same parent are called "Siblings"
         [B], [C]
         [D], [E], [F]
-        [G], [H]
+        [G], [H] 
         [I], [J]
 
     Leaf/External Node: Node ที่มี Outdegree = 0 หรือ Node ล่างสุด, a node without successors is called "Leaf" node

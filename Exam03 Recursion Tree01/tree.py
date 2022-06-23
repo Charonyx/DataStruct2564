@@ -70,14 +70,14 @@ class Tree :
                         return self.root
                     _node = _node.right
 
-    # def insertRecursion(self, node, data) :
-    #     if node == None :
-    #         return Node(data)
-    #     if data < node.data :
-    #         node.left = self.insertRecursion(node.left, data)
-    #     else :
-    #         node.right = self.insertRecursion(node.right, data)
-    #     return node
+    def insertRecursion(self, node, data) :
+        if node == None :
+            return Node(data)
+        if data < node.data :
+            node.left = self.insertRecursion(node.left, data)
+        else :
+            node.right = self.insertRecursion(node.right, data)
+        return node
         
     def delete(self, node, data) :
         if node != None :
@@ -241,23 +241,23 @@ if __name__ == '__main__' :
     _input = list(map(int, input('Enter Input : ').split()))
     t = Tree()
     for i in _input : 
-        root = t.insert(int(i))
-        # t.root = t.insertRecursion(t.root, i)
+        # root = t.insert(int(i))
+        t.root = t.insertRecursion(t.root, i)
     
     # print(t)
-    t.printTree(root)
+    t.printTree(t.root)
     print(t.nodeMin())
     print(t.nodeMax())
 
-    print(f'preorder : {t.preorder(root)}')
-    print(f'inorder  : {t.inorder(root)}')
-    print(f'postorder: {t.postorder(root)}')
-    print(f'breadth  : {t.breathfirst(root)}')
+    print(f'preorder : {t.preorder(t.root)}')
+    print(f'inorder  : {t.inorder(t.root)}')
+    print(f'postorder: {t.postorder(t.root)}')
+    print(f'breadth  : {t.breathfirst(t.root)}')
 
-    print(t.delete(root, 2))
-    print(f'preorder : {t.preorder(root)}')
-    print(f'inorder  : {t.inorder(root)}')
-    print(f'postorder: {t.postorder(root)}')
-    print(f'breadth  : {t.breathfirst(root)}')
+    print(t.delete(t.root, 2))
+    print(f'preorder : {t.preorder(t.root)}')
+    print(f'inorder  : {t.inorder(t.root)}')
+    print(f'postorder: {t.postorder(t.root)}')
+    print(f'breadth  : {t.breathfirst(t.root)}')
 
-    print(t.delete(root, 22))
+    print(t.delete(t.root, 22))
